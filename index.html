@@ -991,6 +991,144 @@
         font-size: 0.76rem;
       }
     }
+
+
+    /* =========================================================
+       Reliable video loading, first-frame cover, and controls
+       ========================================================= */
+
+    .video-managed-frame {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(74, 95, 122, 0.28), transparent 42%),
+        linear-gradient(135deg, #18202b 0%, #0e131b 100%);
+    }
+
+    .video-managed-frame video {
+      position: relative;
+      z-index: 1;
+      background: transparent !important;
+    }
+
+    .teaser-video-managed-frame {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 14px rgba(10, 10, 10, 0.14);
+    }
+
+    .teaser-video-managed-frame #tree {
+      width: 100%;
+      border-radius: inherit;
+    }
+
+    .video-loading-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(86, 108, 139, 0.34), transparent 44%),
+        linear-gradient(135deg, rgba(24, 32, 43, 0.98), rgba(8, 12, 18, 0.98));
+      color: #fff;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: none;
+      transition: opacity 0.24s ease, visibility 0.24s ease;
+    }
+
+    .video-managed-frame.is-ready .video-loading-overlay {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .video-managed-frame.is-error .video-loading-overlay {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      background: linear-gradient(135deg, rgba(83, 18, 25, 0.97), rgba(35, 8, 12, 0.98));
+    }
+
+    .video-loading-card {
+      width: min(340px, calc(100% - 2rem));
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.28);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .video-loading-spinner {
+      width: 32px;
+      height: 32px;
+      margin: 0 auto 0.75rem;
+      border: 3px solid rgba(255, 255, 255, 0.26);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: proxidex-video-spin 0.85s linear infinite;
+    }
+
+    .video-loading-label {
+      margin: 0 0 0.7rem;
+      font-size: 0.94rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .video-buffer-track {
+      width: 100%;
+      height: 5px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    .video-buffer-value {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: #fff;
+      transition: width 0.18s ease;
+    }
+
+    .video-retry-button {
+      display: none;
+      margin: 0.85rem auto 0;
+      padding: 0.48rem 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 999px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .video-managed-frame.is-error .video-loading-spinner,
+    .video-managed-frame.is-error .video-buffer-track {
+      display: none;
+    }
+
+    .video-managed-frame.is-error .video-retry-button {
+      display: inline-flex;
+    }
+
+    @keyframes proxidex-video-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .video-loading-spinner {
+        animation: none;
+      }
+    }
 </style>
 </head>
 <body>
@@ -1049,9 +1187,9 @@
 <div class="container is-max-desktop">
 <div class="hero-body">
 <!-- TODO: Replace with your teaser video -->
-<video class="section-scroll-autoplay-video teaser-scroll-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" height="100%" id="tree" loop="" muted="" playsinline="" poster="" preload="none">
+<video controls="" class="section-scroll-autoplay-video teaser-scroll-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" height="100%" id="tree" loop="" muted="" playsinline="" preload="metadata">
 <!-- TODO: Add your video file path here -->
-<source data-src="static/videos/CoRL.mp4" type="video/mp4"/>
+<source data-src="static/video3/CoRL.mp4" type="video/mp4"/>
 </video>
 <!-- TODO: Replace with your video description -->
 <h2 class="subtitle has-text-centered">
@@ -1088,10 +1226,10 @@
           Teleoperation
         </button>
 <button aria-selected="false" class="pipeline-tab" data-pipeline-index="1" role="tab" type="button">
-          Method
+          Training of ProxiDex
         </button>
 <button aria-selected="false" class="pipeline-tab" data-pipeline-index="2" role="tab" type="button">
-          Inference
+          Inference of ProxiDex
         </button>
 </div>
 <div class="pipeline-viewport">
@@ -1107,18 +1245,18 @@
 </article>
 <article aria-hidden="true" class="pipeline-slide">
 <div class="pipeline-image-frame">
-<img alt="ProxiDex method overview" loading="lazy" src="static/images/fig2.png"/>
+<img alt="Training pipeline of ProxiDex" loading="lazy" src="static/images/fig2.png"/>
 </div>
-<h3 class="title is-4 pipeline-slide-title">Method</h3>
+<h3 class="title is-4 pipeline-slide-title">Training of ProxiDex</h3>
 <p class="pipeline-description">
-              The method proceeds in three stages: (a) interaction-aware data acquisition, which reconstructs hand–object interaction point clouds from manipulation images and robot states; (b) latent interaction dynamics modeling, which extracts region-level proximity cues and learns action-conditioned proximity evolution; and (c) trajectory-adaptive policy inference, which incorporates these cues into a diffusion policy to reweight proximity tokens across manipulation phases.
+              The training pipeline of ProxiDex proceeds in three stages: (a) interaction-aware data acquisition, which reconstructs hand–object interaction point clouds from manipulation images and robot states; (b) latent interaction dynamics modeling, which extracts region-level proximity cues and learns action-conditioned proximity evolution; and (c) trajectory-adaptive policy inference, which incorporates these cues into a diffusion policy to reweight proximity tokens across manipulation phases.
             </p>
 </article>
 <article aria-hidden="true" class="pipeline-slide">
 <div class="pipeline-image-frame">
 <img alt="Policy inference pipeline with dynamics consistency guidance" loading="lazy" src="static/images/fig3.png"/>
 </div>
-<h3 class="title is-4 pipeline-slide-title">Inference</h3>
+<h3 class="title is-4 pipeline-slide-title">Inference of ProxiDex</h3>
 <p class="pipeline-description">
               Dynamics-Guided Closed-Loop Inference is a real-time robust control mechanism that checks consistency between predicted and observed system dynamics. It encodes sensory input into latent states and uses a forward dynamics model to predict the next state given an action. If prediction matches observation within a threshold, the system updates using real data; otherwise, it switches to “Dynamics-Dream Mode”, generating future states autoregressively from the model to maintain stable, physically plausible control—especially under occlusion or sensing failure.
             </p>
@@ -1133,8 +1271,8 @@
 </button>
 <div aria-label="Choose pipeline illustration" class="pipeline-dots">
 <button aria-current="true" aria-label="Show Teleoperation illustration" class="pipeline-dot is-active" data-pipeline-index="0" type="button"></button>
-<button aria-current="false" aria-label="Show Method illustration" class="pipeline-dot" data-pipeline-index="1" type="button"></button>
-<button aria-current="false" aria-label="Show Inference illustration" class="pipeline-dot" data-pipeline-index="2" type="button"></button>
+<button aria-current="false" aria-label="Show Training of ProxiDex illustration" class="pipeline-dot" data-pipeline-index="1" type="button"></button>
+<button aria-current="false" aria-label="Show Inference of ProxiDex illustration" class="pipeline-dot" data-pipeline-index="2" type="button"></button>
 </div>
 </div>
 </div>
@@ -1147,12 +1285,12 @@
 <!-- Simulator teleoperation -->
 <div class="teleoperation-subsection" id="simulator-teleoperation">
 <h3 class="title is-3 has-text-centered teleoperation-subtitle">Teleoperation in the simulator</h3>
-<div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Teleoperation in the simulator" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Simtask1-3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Teleoperation in the simulator" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Simtask1-3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
 <!-- End simulator teleoperation -->
 <!-- Real-world teleoperation -->
 <div class="teleoperation-subsection" id="realworld-teleoperation">
 <h3 class="title is-3 has-text-centered teleoperation-subtitle">Teleoperation in the real-world</h3>
-<div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Teleoperation in the real world" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Realtask1-3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Teleoperation in the real world" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Realtask1-3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
 <!-- End real-world teleoperation -->
 </div>
 </section>
@@ -1166,22 +1304,22 @@
 <!-- Adroit -->
 <div class="benchmark-visualization-group" id="adroit-visualization">
 <h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Benchmark: Adroit</h3>
-<div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Benchmark Adroit interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Benchmark1.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Benchmark Adroit interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark1.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
 <!-- End Adroit -->
 <!-- DexArt -->
 <div class="benchmark-visualization-group" id="dexart-visualization">
 <h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Benchmark: DexArt</h3>
-<div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Benchmark DexArt interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Benchmark2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Benchmark DexArt interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
 <!-- End DexArt -->
 <!-- Self-Design -->
 <div class="benchmark-visualization-group" id="self-design-visualization">
 <h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Self-Design Tasks in IsaacLab</h3>
-<div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Self-designed IsaacLab interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Benchmark3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Self-designed IsaacLab interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
 <!-- End Self-Design -->
 <!-- Real-World -->
 <div class="benchmark-visualization-group" id="real-world-visualization">
 <h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Real-World</h3>
-<div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Real-world interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Benchmark4.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Real-world interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark4.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
 <!-- End Real-World -->
 </div>
 </section>
@@ -1296,13 +1434,13 @@
 </div>
 <div class="comparison-results-block" id="generalization-unseen-objects">
 <h3 class="title is-3 has-text-centered comparison-results-title">Generalization to Unseen Objects</h3>
-<div class="labeled-result-video-layout"><div aria-label="Compared methods" class="result-method-labels"><div class="result-method-label">DP3</div><div class="result-method-label">ManiFlow</div><div class="result-method-label">ProxiDex</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Generalization to unseen objects" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Unseen.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
+<div class="labeled-result-video-layout"><div aria-label="Compared methods" class="result-method-labels"><div class="result-method-label">DP3</div><div class="result-method-label">ManiFlow</div><div class="result-method-label">ProxiDex</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Generalization to unseen objects" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Unseen.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
 <div class="comparison-results-block" id="robust-clutter-scenarios">
 <h3 class="title is-3 has-text-centered comparison-results-title">Robust to Clutter Scenarios</h3>
-<div class="labeled-result-video-layout"><div aria-label="Compared methods" class="result-method-labels"><div class="result-method-label">DP3</div><div class="result-method-label">ManiFlow</div><div class="result-method-label">ProxiDex</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Robustness to clutter scenarios" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Clutter.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
+<div class="labeled-result-video-layout"><div aria-label="Compared methods" class="result-method-labels"><div class="result-method-label">DP3</div><div class="result-method-label">ManiFlow</div><div class="result-method-label">ProxiDex</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Robustness to clutter scenarios" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Clutter.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
 <div class="comparison-results-block" id="robust-visual-occlusion">
 <h3 class="title is-3 has-text-centered comparison-results-title">Robust to Visual Occlusion</h3>
-<div class="labeled-result-video-layout"><div aria-label="Compared methods" class="result-method-labels"><div class="result-method-label">DP3</div><div class="result-method-label">ManiFlow</div><div class="result-method-label">ProxiDex</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video aria-label="Robustness to visual occlusion" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="none"><source data-src="static/videos/Occulde1.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
+<div class="labeled-result-video-layout"><div aria-label="Compared methods" class="result-method-labels"><div class="result-method-label">DP3</div><div class="result-method-label">ManiFlow</div><div class="result-method-label">ProxiDex</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Robustness to visual occlusion" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Occulde1.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
 </div>
 </section>
 <!-- End quantitative results -->
@@ -1324,10 +1462,22 @@
     const previousButton = carousel.querySelector('.pipeline-arrow.is-previous');
     const nextButton = carousel.querySelector('.pipeline-arrow.is-next');
     const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const hoverPauseTargets = Array.from(
+      carousel.querySelectorAll(
+        '.pipeline-tab, .pipeline-image-frame, .pipeline-slide-title, ' +
+        '.pipeline-description, .pipeline-arrow, .pipeline-dot'
+      )
+    );
 
     let currentIndex = 0;
     let autoplayTimer = null;
+    let hoveredPauseTargets = 0;
+    let focusPaused = false;
     const autoplayDelay = 5000;
+
+    function isInteractionPaused() {
+      return hoveredPauseTargets > 0 || focusPaused;
+    }
 
     function showSlide(index, restartAutoplay) {
       currentIndex = (index + slides.length) % slides.length;
@@ -1364,7 +1514,11 @@
     function startAutoplay() {
       stopAutoplay();
 
-      if (reducedMotionQuery.matches || document.hidden) {
+      if (
+        reducedMotionQuery.matches ||
+        document.hidden ||
+        isInteractionPaused()
+      ) {
         return;
       }
 
@@ -1385,19 +1539,43 @@
       });
     });
 
-    previousButton.addEventListener('click', function () {
-      showSlide(currentIndex - 1, true);
+    if (previousButton) {
+      previousButton.addEventListener('click', function () {
+        showSlide(currentIndex - 1, true);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', function () {
+        showSlide(currentIndex + 1, true);
+      });
+    }
+
+    /*
+      Auto-rotation continues while the pointer is outside the carousel's
+      meaningful content. It pauses over tabs, images, titles, descriptions,
+      arrows, and dots, so the selected panel never moves while being read.
+    */
+    hoverPauseTargets.forEach(function (target) {
+      target.addEventListener('pointerenter', function () {
+        hoveredPauseTargets += 1;
+        stopAutoplay();
+      });
+
+      target.addEventListener('pointerleave', function () {
+        hoveredPauseTargets = Math.max(0, hoveredPauseTargets - 1);
+        startAutoplay();
+      });
     });
 
-    nextButton.addEventListener('click', function () {
-      showSlide(currentIndex + 1, true);
+    carousel.addEventListener('focusin', function () {
+      focusPaused = true;
+      stopAutoplay();
     });
 
-    carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', startAutoplay);
-    carousel.addEventListener('focusin', stopAutoplay);
     carousel.addEventListener('focusout', function (event) {
       if (!carousel.contains(event.relatedTarget)) {
+        focusPaused = false;
         startAutoplay();
       }
     });
@@ -1423,11 +1601,158 @@ document.addEventListener('DOMContentLoaded', function () {
   const videos = Array.from(
     document.querySelectorAll('.section-scroll-autoplay-video')
   );
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let animationFrameId = null;
 
-  function loadVideo(video) {
-    if (!video || video.dataset.loaded === 'true') {
+  if (!videos.length) {
+    return;
+  }
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const videoStates = new WeakMap();
+  let animationFrameId = null;
+  let activeVideo = null;
+
+  function getOrCreateFrame(video) {
+    let frame = video.closest(
+      '.natural-video-frame, .single-video-frame, .task-video-frame, .comparison-video-frame'
+    );
+
+    if (!frame) {
+      frame = document.createElement('div');
+      frame.className = 'video-managed-frame teaser-video-managed-frame';
+      video.parentNode.insertBefore(frame, video);
+      frame.appendChild(video);
+    } else {
+      frame.classList.add('video-managed-frame');
+    }
+
+    return frame;
+  }
+
+  function createLoadingUI(video) {
+    const frame = getOrCreateFrame(video);
+    frame.classList.add('is-loading');
+
+    const overlay = document.createElement('div');
+    overlay.className = 'video-loading-overlay';
+    overlay.setAttribute('aria-live', 'polite');
+
+    const card = document.createElement('div');
+    card.className = 'video-loading-card';
+
+    const spinner = document.createElement('div');
+    spinner.className = 'video-loading-spinner';
+    spinner.setAttribute('aria-hidden', 'true');
+
+    const label = document.createElement('p');
+    label.className = 'video-loading-label';
+    label.textContent = 'Loading video…';
+
+    const progressTrack = document.createElement('div');
+    progressTrack.className = 'video-buffer-track';
+    progressTrack.setAttribute('aria-hidden', 'true');
+
+    const progressValue = document.createElement('div');
+    progressValue.className = 'video-buffer-value';
+    progressTrack.appendChild(progressValue);
+
+    const retryButton = document.createElement('button');
+    retryButton.className = 'video-retry-button';
+    retryButton.type = 'button';
+    retryButton.textContent = 'Retry video';
+
+    card.appendChild(spinner);
+    card.appendChild(label);
+    card.appendChild(progressTrack);
+    card.appendChild(retryButton);
+    overlay.appendChild(card);
+    frame.appendChild(overlay);
+
+    const state = {
+      frame: frame,
+      label: label,
+      progressValue: progressValue,
+      retryButton: retryButton,
+      autoPauseRequested: false
+    };
+
+    videoStates.set(video, state);
+
+    retryButton.addEventListener('click', function () {
+      retryVideo(video);
+    });
+  }
+
+  function setLoading(video, message) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    state.frame.classList.add('is-loading');
+    state.frame.classList.remove('is-ready', 'is-error');
+    state.label.textContent = message || 'Loading video…';
+  }
+
+  function setReady(video) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    state.frame.classList.remove('is-loading', 'is-error');
+    state.frame.classList.add('is-ready');
+  }
+
+  function setError(video) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    state.frame.classList.remove('is-loading', 'is-ready');
+    state.frame.classList.add('is-error');
+    state.label.textContent = 'The video could not be loaded.';
+  }
+
+  function updateBufferedProgress(video) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    let percent = 0;
+
+    if (
+      Number.isFinite(video.duration) &&
+      video.duration > 0 &&
+      video.buffered.length > 0
+    ) {
+      let bufferedEnd = 0;
+      for (let index = 0; index < video.buffered.length; index += 1) {
+        bufferedEnd = Math.max(bufferedEnd, video.buffered.end(index));
+      }
+      percent = Math.max(0, Math.min(100, (bufferedEnd / video.duration) * 100));
+    }
+
+    state.progressValue.style.width = percent.toFixed(1) + '%';
+
+    if (percent >= 1 && state.frame.classList.contains('is-loading')) {
+      state.label.textContent = 'Loading video… ' + Math.round(percent) + '%';
+    }
+  }
+
+  function loadVideo(video, preloadMode) {
+    if (!video) {
+      return;
+    }
+
+    if (preloadMode === 'auto') {
+      video.preload = 'auto';
+    } else if (video.preload !== 'auto') {
+      video.preload = 'metadata';
+    }
+
+    if (video.dataset.loaded === 'true') {
       return;
     }
 
@@ -1436,11 +1761,39 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    source.src = source.dataset.src;
+    const sourceUrl = source.dataset.src;
+    video.dataset.sourceUrl = sourceUrl;
+    source.src = sourceUrl;
     source.removeAttribute('data-src');
     video.dataset.loaded = 'true';
-    video.preload = 'auto';
+    setLoading(video, 'Loading video…');
     video.load();
+  }
+
+  function retryVideo(video) {
+    const source = video.querySelector('source');
+    const sourceUrl = video.dataset.sourceUrl || (source && source.dataset.src);
+
+    if (!source || !sourceUrl) {
+      setError(video);
+      return;
+    }
+
+    setLoading(video, 'Retrying video…');
+    source.removeAttribute('src');
+    video.removeAttribute('src');
+    video.load();
+
+    window.setTimeout(function () {
+      source.src = sourceUrl;
+      video.dataset.loaded = 'true';
+      video.preload = 'auto';
+      video.load();
+
+      if (video === activeVideo && video.dataset.userPaused !== 'true') {
+        safelyPlay(video);
+      }
+    }, 80);
   }
 
   function applyNaturalAspectRatio(video) {
@@ -1448,7 +1801,10 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    const frame = video.closest('.natural-video-frame');
+    const frame = video.closest(
+      '.natural-video-frame, .single-video-frame, .task-video-frame, .comparison-video-frame, .video-managed-frame'
+    );
+
     if (frame) {
       frame.style.aspectRatio = video.videoWidth + ' / ' + video.videoHeight;
       frame.classList.add('has-video-metadata');
@@ -1477,26 +1833,56 @@ document.addEventListener('DOMContentLoaded', function () {
     return Math.abs(videoCenter - viewportCenter);
   }
 
+  function pauseAutomatically(video) {
+    const state = videoStates.get(video);
+    if (!state || video.paused) {
+      return;
+    }
+
+    state.autoPauseRequested = true;
+    video.pause();
+  }
+
+  function safelyPlay(video) {
+    if (
+      !video ||
+      reducedMotion.matches ||
+      document.hidden ||
+      video.dataset.userPaused === 'true'
+    ) {
+      return;
+    }
+
+    loadVideo(video, 'auto');
+
+    if (video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+      setLoading(video, 'Loading video…');
+    }
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(function () {
+        /* Native controls remain available if autoplay is blocked. */
+        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          setReady(video);
+        }
+      });
+    }
+  }
+
   function updateActiveVideo() {
     animationFrameId = null;
 
     if (document.hidden || reducedMotion.matches) {
-      videos.forEach(function (video) {
-        if (!video.paused) {
-          video.pause();
-        }
-      });
+      videos.forEach(pauseAutomatically);
       return;
     }
 
     const visibleVideos = videos.filter(isMeaningfullyVisible);
 
     if (!visibleVideos.length) {
-      videos.forEach(function (video) {
-        if (!video.paused) {
-          video.pause();
-        }
-      });
+      activeVideo = null;
+      videos.forEach(pauseAutomatically);
       return;
     }
 
@@ -1504,20 +1890,17 @@ document.addEventListener('DOMContentLoaded', function () {
       return distanceToViewportCenter(a) - distanceToViewportCenter(b);
     });
 
-    const activeVideo = visibleVideos[0];
-    loadVideo(activeVideo);
+    activeVideo = visibleVideos[0];
+    loadVideo(activeVideo, 'auto');
 
     videos.forEach(function (video) {
-      if (video !== activeVideo && !video.paused) {
-        video.pause();
+      if (video !== activeVideo) {
+        pauseAutomatically(video);
       }
     });
 
-    const playPromise = activeVideo.play();
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(function () {
-        // Muted autoplay may still be disabled by browser or user settings.
-      });
+    if (activeVideo.dataset.userPaused !== 'true') {
+      safelyPlay(activeVideo);
     }
   }
 
@@ -1530,57 +1913,120 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   videos.forEach(function (video) {
-    video.tabIndex = 0;
-    video.setAttribute('role', 'button');
+    createLoadingUI(video);
+    video.controls = true;
+    video.preload = 'metadata';
+    video.dataset.userPaused = 'false';
+
+    video.addEventListener('loadstart', function () {
+      setLoading(video, 'Loading video…');
+    });
+
+    video.addEventListener('progress', function () {
+      updateBufferedProgress(video);
+    });
 
     video.addEventListener('loadedmetadata', function () {
       applyNaturalAspectRatio(video);
+      updateBufferedProgress(video);
       scheduleUpdate();
     });
 
-    /*
-      Clicking the active video pauses it; clicking a paused video makes it
-      the manually selected active video until the next meaningful scroll.
-    */
-    video.addEventListener('click', function () {
-      if (video.paused) {
-        loadVideo(video);
+    video.addEventListener('loadeddata', function () {
+      setReady(video);
+    });
 
-        videos.forEach(function (otherVideo) {
-          if (otherVideo !== video && !otherVideo.paused) {
-            otherVideo.pause();
-          }
-        });
+    video.addEventListener('canplay', function () {
+      setReady(video);
+    });
 
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(function () {});
-        }
-      } else {
-        video.pause();
+    video.addEventListener('playing', function () {
+      setReady(video);
+    });
+
+    video.addEventListener('waiting', function () {
+      if (video === activeVideo) {
+        setLoading(video, 'Buffering video…');
       }
     });
 
-    video.addEventListener('keydown', function (event) {
-      if (event.key !== 'Enter' && event.key !== ' ') {
+    video.addEventListener('stalled', function () {
+      if (video === activeVideo) {
+        setLoading(video, 'Buffering video…');
+      }
+    });
+
+    video.addEventListener('seeking', function () {
+      setLoading(video, 'Seeking…');
+    });
+
+    video.addEventListener('seeked', function () {
+      if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+        setReady(video);
+      }
+    });
+
+    video.addEventListener('error', function () {
+      setError(video);
+    });
+
+    video.addEventListener('play', function () {
+      video.dataset.userPaused = 'false';
+      activeVideo = video;
+
+      videos.forEach(function (otherVideo) {
+        if (otherVideo !== video) {
+          pauseAutomatically(otherVideo);
+        }
+      });
+    });
+
+    video.addEventListener('pause', function () {
+      const state = videoStates.get(video);
+      if (state && state.autoPauseRequested) {
+        state.autoPauseRequested = false;
         return;
       }
 
-      event.preventDefault();
-      video.click();
+      if (!video.ended) {
+        video.dataset.userPaused = 'true';
+      }
     });
   });
+
+  /* Preload videos before they enter the viewport to avoid black frames. */
+  if ('IntersectionObserver' in window) {
+    const preloadObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target, 'metadata');
+            preloadObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '1200px 0px',
+        threshold: 0.01
+      }
+    );
+
+    videos.forEach(function (video) {
+      preloadObserver.observe(video);
+    });
+  } else {
+    videos.slice(0, 2).forEach(function (video) {
+      loadVideo(video, 'metadata');
+    });
+  }
 
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
   window.addEventListener('resize', scheduleUpdate, { passive: true });
 
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-      videos.forEach(function (video) {
-        if (!video.paused) {
-          video.pause();
-        }
-      });
+      videos.forEach(pauseAutomatically);
     } else {
       scheduleUpdate();
     }
