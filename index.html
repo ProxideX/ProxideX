@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- Primary Meta Tags -->
+<!-- TODO: Replace with your paper title and author names -->
+<meta content="PAPER_TITLE - AUTHOR_NAMES" name="title"/>
+<!-- TODO: Write a compelling 150-160 character description of your research -->
+<meta content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS" name="description"/>
+<!-- TODO: Add 5-10 relevant keywords for your research area -->
+<meta content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI" name="keywords"/>
+<!-- TODO: List all authors -->
+<meta content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="English" name="language"/>
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<!-- TODO: Replace with your institution or lab name -->
+<meta content="INSTITUTION_OR_LAB_NAME" property="og:site_name"/>
+<!-- TODO: Same as paper title above -->
+<meta content="PAPER_TITLE" property="og:title"/>
+<!-- TODO: Same as description above -->
+<meta content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS" property="og:description"/>
+<!-- TODO: Replace with your actual website URL -->
+<meta content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE" property="og:url"/>
+<!-- TODO: Create a 1200x630px preview image and update path -->
+<meta content="https://YOUR_DOMAIN.com/static/images/social_preview.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="PAPER_TITLE - Research Preview" property="og:image:alt"/>
+<meta content="2024-01-01T00:00:00.000Z" property="article:published_time"/>
+<meta content="FIRST_AUTHOR_NAME" property="article:author"/>
+<meta content="Research" property="article:section"/>
+<meta content="KEYWORD1" property="article:tag"/>
+<meta content="KEYWORD2" property="article:tag"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- TODO: Replace with your lab/institution Twitter handle -->
+<meta content="@YOUR_TWITTER_HANDLE" name="twitter:site"/>
+<!-- TODO: Replace with first author's Twitter handle -->
+<meta content="@AUTHOR_TWITTER_HANDLE" name="twitter:creator"/>
+<!-- TODO: Same as paper title above -->
+<meta content="PAPER_TITLE" name="twitter:title"/>
+<!-- TODO: Same as description above -->
+<meta content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS" name="twitter:description"/>
+<!-- TODO: Same as social preview image above -->
+<meta content="https://YOUR_DOMAIN.com/static/images/social_preview.png" name="twitter:image"/>
+<meta content="PAPER_TITLE - Research Preview" name="twitter:image:alt"/>
+<!-- Academic/Research Specific -->
+<meta content="PAPER_TITLE" name="citation_title"/>
+<meta content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST" name="citation_author"/>
+<meta content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST" name="citation_author"/>
+<meta content="2024" name="citation_publication_date"/>
+<meta content="CONFERENCE_NAME" name="citation_conference_title"/>
+<meta content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf" name="citation_pdf_url"/>
+<!-- Additional SEO -->
+<meta content="#2563eb" name="theme-color"/>
+<meta content="#2563eb" name="msapplication-TileColor"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<!-- Preconnect for performance -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://ajax.googleapis.com" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<!-- TODO: Replace with your paper title and authors -->
+<title>ProxiDex</title><link href="static/videos/Tactile.png" rel="icon" type="image/png"/>
+<!-- Critical CSS - Load synchronously -->
+<link href="static/css/bulma.min.css" rel="stylesheet"/>
+<link href="static/css/index.css" rel="stylesheet"/>
+<!-- Non-critical CSS - Load asynchronously -->
+<link as="style" href="static/css/fontawesome.all.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link as="style" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<!-- Fallback for browsers that don't support preload -->
+<noscript>
+<link href="static/css/fontawesome.all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet"/>
+</noscript>
+<!-- Fonts - Optimized loading -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Defer non-critical JavaScript -->
+<script defer="" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer="" src="static/js/fontawesome.all.min.js"></script>
+<script defer="" src="static/js/index.js"></script>
+<!-- Structured Data for Academic Papers -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+<!-- Website/Organization Structured Data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+<!-- Teleoperation task tabs and responsive video layouts -->
+<style>
+    /* Keep the publication title on two deliberate lines on desktop. */
+    .publication-title-two-lines > span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .publication-title-standard {
+      color: #202124;
+    }
+
+    .publication-title-standard .publication-title-proxidex {
+      color: #1677c8;
+    }
+
+    .conference-line {
+      margin: 0.85rem 0 1rem;
+      color: #d62828;
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .paper-author-list {
+      margin-top: 0.35rem;
+      line-height: 1.8;
+    }
+
+    .paper-author-row,
+    .paper-affiliation-row,
+    .paper-author-note {
+      display: block;
+    }
+
+    .paper-author {
+      display: inline-block;
+      margin: 0 0.45rem;
+      white-space: nowrap;
+    }
+
+    .paper-author sup {
+      margin-left: 0.08rem;
+      font-size: 0.68em;
+    }
+
+    .paper-affiliations {
+      display: block;
+      margin-top: 0.65rem;
+      color: #4a4a4a;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .paper-author-note {
+      margin-top: 0.35rem;
+      font-size: 0.86rem;
+    }
+
+    /* Primary section navigation with scroll-aware highlighting. */
+    .section-side-nav {
+      position: fixed;
+      z-index: 40;
+      top: 50%;
+      left: 1rem;
+      width: 210px;
+      padding: 0.7rem;
+      border: 1px solid rgba(50, 115, 220, 0.2);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 8px 28px rgba(10, 10, 10, 0.1);
+      transform: translateY(-50%);
+      backdrop-filter: blur(8px);
+    }
+
+    .section-side-nav a {
+      display: block;
+      margin: 0.15rem 0;
+      padding: 0.58rem 0.68rem;
+      border-left: 3px solid transparent;
+      border-radius: 7px;
+      color: #5b6470;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+      transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .section-side-nav a:hover,
+    .section-side-nav a:focus-visible {
+      background: #eef5ff;
+      color: #1458a6;
+    }
+
+    .section-side-nav a.is-active,
+    .section-side-nav a[aria-current="true"] {
+      border-left-color: #3273dc;
+      background: #eaf3ff;
+      color: #1558aa;
+    }
+
+    .section-side-nav .nav-line {
+      display: block;
+    }
+
+    #pipeline-illustration,
+    #teleoperation,
+    #interaction-pointcloud-visualization,
+    #results {
+      scroll-margin-top: 1rem;
+    }
+
+    @media screen and (min-width: 1101px) {
+      #main-content {
+        padding-left: 226px;
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      .section-side-nav {
+        position: sticky;
+        top: 0;
+        left: auto;
+        display: flex;
+        width: 100%;
+        padding: 0.45rem 0.65rem;
+        border-width: 0 0 1px;
+        border-radius: 0;
+        overflow-x: auto;
+        transform: none;
+        white-space: nowrap;
+      }
+
+      .section-side-nav a {
+        flex: 0 0 auto;
+        border-bottom: 3px solid transparent;
+        border-left: 0;
+      }
+
+      .section-side-nav a.is-active,
+      .section-side-nav a[aria-current="true"] {
+        border-bottom-color: #3273dc;
+      }
+
+      .section-side-nav .nav-line {
+        display: inline;
+      }
+
+      #pipeline-illustration,
+      #teleoperation,
+      #interaction-pointcloud-visualization,
+      #results {
+        scroll-margin-top: 4.25rem;
+      }
+    }
+
+    .teleoperation-section {
+      padding-top: 2.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .teleoperation-group-section {
+      padding-top: 3rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .teleoperation-group-title {
+      margin-bottom: 2.75rem !important;
+    }
+
+    .teleoperation-subsection {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .teleoperation-subsection + .teleoperation-subsection {
+      margin-top: 4rem;
+      padding-top: 3.25rem;
+      border-top: 1px solid #dbdbdb;
+    }
+
+    .teleoperation-subtitle {
+      margin-bottom: 1.5rem !important;
+    }
+
+    /* Shared task-column layout for teleoperation and point-cloud videos. */
+    .task-video-columns {
+      display: grid;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .task-video-columns.is-three-columns {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .task-video-columns.is-four-columns {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .task-video-column {
+      min-width: 0;
+    }
+
+    .task-video-label {
+      margin-bottom: 0.75rem !important;
+      color: #363636;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .task-video-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .task-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: auto;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #000;
+      box-shadow: 0 2px 10px rgba(10, 10, 10, 0.12);
+    }
+
+    .task-video-frame video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    /* Pipeline illustration carousel */
+    .pipeline-section {
+      padding-top: 2.75rem;
+      padding-bottom: 3.25rem;
+    }
+
+    .pipeline-carousel {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .pipeline-tabs {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      border-bottom: 1px solid #dbdbdb;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .pipeline-tab {
+      flex: 0 0 auto;
+      appearance: none;
+      background: transparent;
+      border: 0;
+      border-bottom: 3px solid transparent;
+      color: #4a4a4a;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.25;
+      padding: 0.85rem 1.5rem;
+      white-space: nowrap;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pipeline-tab:hover,
+    .pipeline-tab:focus-visible {
+      color: #3273dc;
+      outline: none;
+    }
+
+    .pipeline-tab.is-active {
+      color: #3273dc;
+      border-bottom-color: #3273dc;
+    }
+
+    .pipeline-viewport {
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .pipeline-track {
+      display: flex;
+      align-items: stretch;
+      transition: transform 0.65s ease-in-out;
+      will-change: transform;
+    }
+
+    .pipeline-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      padding: 0 0.35rem;
+    }
+
+    .pipeline-image-frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .pipeline-image-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .pipeline-slide-title {
+      margin-top: 1.25rem;
+      margin-bottom: 0.65rem !important;
+      text-align: center;
+    }
+
+    .pipeline-description {
+      max-width: 880px;
+      margin: 0 auto;
+      color: #4a4a4a;
+      font-size: 1rem;
+      line-height: 1.65;
+      text-align: justify;
+    }
+
+    .pipeline-arrow {
+      position: absolute;
+      top: 250px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 3px 12px rgba(10, 10, 10, 0.18);
+      color: #363636;
+      cursor: pointer;
+      font-size: 1.15rem;
+      transform: translateY(-50%);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .pipeline-arrow:hover,
+    .pipeline-arrow:focus-visible {
+      background: #3273dc;
+      color: #fff;
+      outline: none;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .pipeline-arrow.is-previous {
+      left: -1rem;
+    }
+
+    .pipeline-arrow.is-next {
+      right: -1rem;
+    }
+
+    .pipeline-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.55rem;
+      margin-top: 1.35rem;
+    }
+
+    .pipeline-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #b5b5b5;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .pipeline-dot.is-active {
+      background: #3273dc;
+      transform: scale(1.25);
+    }
+
+
+
+    /* Video loading and error feedback */
+    .video-status-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.58);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .video-status-overlay.is-visible {
+      display: flex;
+    }
+
+    .video-status-overlay.is-error {
+      background: rgba(95, 10, 10, 0.82);
+      pointer-events: auto;
+    }
+
+    @media screen and (max-width: 1024px) {
+      .publication-title-two-lines {
+        font-size: 2.45rem !important;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .publication-title-two-lines > span {
+        white-space: normal;
+      }
+
+      .publication-title-two-lines {
+        font-size: 2rem !important;
+      }
+
+
+      .pipeline-tabs {
+        justify-content: flex-start;
+      }
+
+      .pipeline-tab {
+        font-size: 0.95rem;
+        padding: 0.75rem 1rem;
+      }
+
+      .pipeline-image-frame {
+        height: 260px;
+      }
+
+      .pipeline-description {
+        font-size: 0.95rem;
+        text-align: left;
+      }
+
+      .pipeline-arrow {
+        top: 165px;
+        width: 36px;
+        height: 36px;
+      }
+
+      .pipeline-arrow.is-previous {
+        left: 0.5rem;
+      }
+
+      .pipeline-arrow.is-next {
+        right: 0.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pipeline-track {
+        transition: none;
+      }
+    }
+
+    /* Interaction point cloud visualization task columns */
+    .interaction-pointcloud-section {
+      padding-top: 3rem;
+      padding-bottom: 3.75rem;
+    }
+
+    .interaction-pointcloud-title {
+      margin-bottom: 3rem !important;
+    }
+
+    .benchmark-visualization-group {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .benchmark-visualization-group + .benchmark-visualization-group {
+      margin-top: 4rem;
+      padding-top: 3.25rem;
+      border-top: 1px solid #dbdbdb;
+    }
+
+    .benchmark-visualization-subtitle {
+      margin-bottom: 1.5rem !important;
+    }
+
+
+    /* Quantitative results table */
+    .results-section {
+      padding-top: 3.5rem;
+      padding-bottom: 4rem;
+      background: #f7f7f7;
+    }
+
+    .results-main-title {
+      margin-bottom: 2.75rem !important;
+    }
+
+    .simulation-results-block {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .simulation-results-title {
+      margin-bottom: 1.5rem !important;
+    }
+
+    .results-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 0.35rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .simulation-results-table {
+      width: 100%;
+      min-width: 1120px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border-top: 2px solid #363636;
+      border-bottom: 2px solid #363636;
+      background: #ffffff;
+      color: #363636;
+      font-size: 0.78rem;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .simulation-results-table caption {
+      caption-side: top;
+      max-width: 1120px;
+      margin: 0 auto 1rem;
+      color: #4a4a4a;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .simulation-results-table th,
+    .simulation-results-table td {
+      padding: 0.62rem 0.45rem;
+      border-bottom: 1px solid #dbdbdb;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .simulation-results-table thead th {
+      background: #f3f3f3;
+      color: #242424;
+      font-weight: 700;
+    }
+
+    .simulation-results-table thead tr:first-child th {
+      border-bottom: 1px solid #7a7a7a;
+    }
+
+    .simulation-results-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .simulation-results-table tbody tr:hover td {
+      background: #fafafa;
+    }
+
+    .simulation-results-table .algorithm-column {
+      min-width: 145px;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      border-right: 1px solid #7a7a7a;
+      text-align: left;
+    }
+
+    .simulation-results-table thead .algorithm-column {
+      text-align: center;
+    }
+
+    .simulation-results-table .group-end {
+      border-right: 1px solid #7a7a7a;
+    }
+
+    .simulation-results-table .best-result {
+      background: #e8e8e8;
+      font-weight: 700;
+    }
+
+    .simulation-results-table tbody tr:hover .best-result {
+      background: #dddddd;
+    }
+
+    .simulation-results-table .ours-row td {
+      border-top: 1.5px solid #7a7a7a;
+    }
+
+    .simulation-results-table .ours-name {
+      font-weight: 700;
+    }
+
+    .results-scroll-hint {
+      display: none;
+      margin-top: 0.65rem;
+      color: #7a7a7a;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+
+    @media screen and (max-width: 1024px) {
+      .task-video-columns.is-three-columns,
+      .task-video-columns.is-four-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .interaction-pointcloud-title,
+      .results-main-title {
+        font-size: 2rem !important;
+      }
+
+      .simulation-results-title {
+        font-size: 1.55rem !important;
+      }
+
+      .simulation-results-table caption {
+        padding: 0 0.25rem;
+        font-size: 0.9rem;
+        text-align: left;
+      }
+
+      .results-scroll-hint {
+        display: block;
+      }
+
+      .task-video-columns.is-three-columns,
+      .task-video-columns.is-four-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+
+    /* Qualitative result video matrices */
+    .comparison-results-block {
+      max-width: 1500px;
+      margin: 4rem auto 0;
+      padding-top: 3.25rem;
+      border-top: 1px solid #d5d5d5;
+    }
+
+    .comparison-results-title {
+      margin-bottom: 1.75rem !important;
+    }
+
+    .comparison-grid-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      padding: 0.2rem 0 0.7rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-grid {
+      display: grid;
+      gap: 1.15rem;
+      min-width: 1420px;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 120px repeat(6, minmax(0, 1fr));
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .comparison-method-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      min-height: 112px;
+      margin: 0;
+      padding: 0.7rem;
+      border-radius: 8px;
+      background: #ededed;
+      color: #2f2f2f;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .comparison-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: auto;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #000;
+      box-shadow: 0 2px 10px rgba(10, 10, 10, 0.12);
+    }
+
+    .comparison-video-frame video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    .comparison-scroll-hint {
+      display: none;
+      margin-top: 0.45rem;
+      color: #7a7a7a;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 600px) {
+      .comparison-results-title {
+        font-size: 1.55rem !important;
+      }
+
+      .comparison-scroll-hint {
+        display: block;
+      }
+    }
+
+  
+    /* Single combined videos used by Teleoperation and point-cloud sections. */
+    .single-video-showcase {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .single-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+      box-shadow: 0 3px 14px rgba(10, 10, 10, 0.14);
+    }
+
+    .single-video-frame video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    /* Autoplay videos are loaded only when they enter the viewport. */
+    .scroll-autoplay-video {
+      background: #000;
+    }
+
+    /* Result videos are deliberately rendered at a modest on-page size.
+       Actual transfer size depends on the encoded MP4 files. */
+    .result-scroll-video {
+      image-rendering: auto;
+    }
+
+    /* =========================================================
+       Natural video aspect ratios and balanced playback controls
+       ========================================================= */
+
+    .single-video-frame,
+    .task-video-frame,
+    .comparison-video-frame {
+      aspect-ratio: auto !important;
+      height: auto !important;
+      min-height: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .single-video-frame video,
+    .task-video-frame video,
+    .comparison-video-frame video {
+      display: block;
+      width: 100%;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .manual-click-video {
+      cursor: pointer;
+    }
+
+    .manual-click-video:focus-visible {
+      outline: 3px solid #3273dc;
+      outline-offset: -3px;
+    }
+
+    .custom-video-play-button {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      z-index: 8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      padding: 0 0 0 4px;
+      border: 2px solid rgba(255, 255, 255, 0.92);
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.62);
+      color: #fff;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 1.45rem;
+      line-height: 1;
+      transform: translate(-50%, -50%);
+      transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .custom-video-play-button:hover,
+    .custom-video-play-button:focus-visible {
+      background: rgba(50, 115, 220, 0.92);
+      outline: none;
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    .custom-video-play-button.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .custom-video-play-button {
+        width: 44px;
+        height: 44px;
+        font-size: 1.15rem;
+      }
+    }
+
+    /* =========================================================
+       Natural-ratio scroll-selected videos
+       ========================================================= */
+
+    .natural-video-showcase {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .natural-video-frame {
+      position: relative;
+      width: 100%;
+      min-height: 260px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+      box-shadow: 0 3px 14px rgba(10, 10, 10, 0.14);
+      transition: aspect-ratio 0.2s ease;
+    }
+
+    .natural-video-frame video,
+    #tree.section-scroll-autoplay-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      background: #000;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      cursor: pointer;
+    }
+
+    .natural-video-frame.has-video-metadata {
+      min-height: 0;
+    }
+
+    /*
+      Earlier layout rules used fixed 16:9 or 4:3 frames. These overrides
+      ensure the final displayed ratio follows each MP4's native dimensions.
+    */
+    .single-video-frame,
+    .task-video-frame,
+    .comparison-video-frame,
+    .natural-video-frame {
+      height: auto !important;
+    }
+
+    .section-scroll-autoplay-video {
+      background: #000;
+    }
+
+    .section-scroll-autoplay-video:focus-visible {
+      outline: 3px solid #3273dc;
+      outline-offset: -3px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .natural-video-frame {
+        min-height: 190px;
+      }
+    }
+
+    /* Row and column labels around the combined qualitative-result videos. */
+    .labeled-result-video-layout {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 0.55rem 1rem;
+      align-items: stretch;
+      width: 100%;
+      max-width: 1290px;
+      margin: 0 auto;
+      --result-row-count: 3;
+    }
+
+    .result-axis-corner {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .result-column-labels {
+      display: grid;
+      grid-column: 2;
+      grid-row: 1;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      align-items: end;
+    }
+
+    .result-column-label,
+    .result-row-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      color: #2f2f2f;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .result-column-label {
+      padding: 0.45rem 0.15rem;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .result-row-labels {
+      display: grid;
+      grid-column: 1;
+      grid-row: 2;
+      grid-template-rows: repeat(var(--result-row-count), minmax(0, 1fr));
+      align-items: stretch;
+      height: 100%;
+    }
+
+    .result-row-label {
+      min-height: 0;
+      padding: 0.55rem 0.4rem;
+      font-size: 1rem;
+    }
+
+    .labeled-result-video-layout .natural-video-showcase {
+      grid-column: 2;
+      grid-row: 2;
+      max-width: none;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      .labeled-result-video-layout {
+        grid-template-columns: 82px minmax(0, 1fr);
+        gap: 0.4rem 0.65rem;
+      }
+
+      .result-column-label {
+        font-size: 0.74rem;
+      }
+
+      .result-row-label {
+        font-size: 0.86rem;
+        padding: 0.4rem 0.2rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .labeled-result-video-layout {
+        grid-template-columns: 68px minmax(0, 1fr);
+        gap: 0.45rem;
+      }
+
+      .result-column-label {
+        font-size: 0.66rem;
+      }
+
+      .result-row-label {
+        font-size: 0.76rem;
+      }
+    }
+
+
+    /* =========================================================
+       Reliable video loading, first-frame cover, and controls
+       ========================================================= */
+
+    .video-managed-frame {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(74, 95, 122, 0.28), transparent 42%),
+        linear-gradient(135deg, #18202b 0%, #0e131b 100%);
+    }
+
+    .video-managed-frame video {
+      position: relative;
+      z-index: 1;
+      background: transparent !important;
+    }
+
+    .teaser-video-managed-frame {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 14px rgba(10, 10, 10, 0.14);
+    }
+
+    .teaser-video-managed-frame #tree {
+      width: 100%;
+      border-radius: inherit;
+    }
+
+    .video-loading-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(86, 108, 139, 0.34), transparent 44%),
+        linear-gradient(135deg, rgba(24, 32, 43, 0.98), rgba(8, 12, 18, 0.98));
+      color: #fff;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: none;
+      transition: opacity 0.24s ease, visibility 0.24s ease;
+    }
+
+    .video-managed-frame.is-ready .video-loading-overlay {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .video-managed-frame.is-error .video-loading-overlay {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      background: linear-gradient(135deg, rgba(83, 18, 25, 0.97), rgba(35, 8, 12, 0.98));
+    }
+
+    .video-loading-card {
+      width: min(340px, calc(100% - 2rem));
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.28);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .video-loading-spinner {
+      width: 32px;
+      height: 32px;
+      margin: 0 auto 0.75rem;
+      border: 3px solid rgba(255, 255, 255, 0.26);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: proxidex-video-spin 0.85s linear infinite;
+    }
+
+    .video-loading-label {
+      margin: 0 0 0.7rem;
+      font-size: 0.94rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .video-buffer-track {
+      width: 100%;
+      height: 5px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    .video-buffer-value {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: #fff;
+      transition: width 0.18s ease;
+    }
+
+    .video-retry-button {
+      display: none;
+      margin: 0.85rem auto 0;
+      padding: 0.48rem 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 999px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .video-managed-frame.is-error .video-loading-spinner,
+    .video-managed-frame.is-error .video-buffer-track {
+      display: none;
+    }
+
+    .video-managed-frame.is-error .video-retry-button {
+      display: inline-flex;
+    }
+
+    @keyframes proxidex-video-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .video-loading-spinner {
+        animation: none;
+      }
+    }
+
+    /* Compact typography and media sizing for the revised page. */
+    .abstract-compact-title {
+      margin-bottom: 1rem !important;
+      font-size: 1.55rem !important;
+    }
+
+    .abstract-compact p {
+      font-size: 0.94rem;
+      line-height: 1.48;
+    }
+
+    #pipeline-illustration > .container > h2,
+    #teleoperation > .container > h2,
+    #interaction-pointcloud-visualization > .container > h2,
+    #results > .container > h2 {
+      font-size: 1.9rem !important;
+      text-align: left !important;
+    }
+
+    .teaser .subtitle {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.45;
+    }
+
+    .teleoperation-subtitle,
+    .benchmark-visualization-subtitle,
+    .simulation-results-title,
+    .comparison-results-title,
+    .pipeline-slide-title {
+      font-size: 1.45rem !important;
+    }
+
+    .pipeline-section,
+    .teleoperation-group-section,
+    .interaction-pointcloud-section,
+    .results-section {
+      padding-top: 2.35rem;
+      padding-bottom: 2.7rem;
+    }
+
+    .pipeline-carousel {
+      max-width: 840px;
+    }
+
+    .pipeline-image-frame {
+      height: 390px;
+    }
+
+    .pipeline-arrow {
+      top: 220px;
+    }
+
+    .teaser .hero-body {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .natural-video-showcase {
+      max-width: 1000px;
+    }
+
+    .benchmark-visualization-group {
+      max-width: 1020px;
+    }
+
+    .labeled-result-video-layout {
+      max-width: 1120px;
+    }
+
+    .teleoperation-subsection + .teleoperation-subsection,
+    .benchmark-visualization-group + .benchmark-visualization-group {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+    }
+
+    .comparison-results-block {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      #pipeline-illustration > .container > h2,
+      #teleoperation > .container > h2,
+      #interaction-pointcloud-visualization > .container > h2,
+      #results > .container > h2 {
+        font-size: 1.55rem !important;
+      }
+
+      .teleoperation-subtitle,
+      .benchmark-visualization-subtitle,
+      .simulation-results-title,
+      .comparison-results-title,
+      .pipeline-slide-title {
+        font-size: 1.3rem !important;
+      }
+
+      .pipeline-image-frame {
+        height: 230px;
+      }
+
+      .pipeline-arrow {
+        top: 150px;
+      }
+    }
+</style>
+</head>
+<body>
+<nav aria-label="Primary page sections" class="section-side-nav">
+<a data-section-id="pipeline-illustration" href="#pipeline-illustration">Framework</a>
+<a data-section-id="teleoperation" href="#teleoperation">Teleoperation</a>
+<a data-section-id="interaction-pointcloud-visualization" href="#interaction-pointcloud-visualization"><span class="nav-line">Interaction Point Cloud</span> <span class="nav-line">Visualization</span></a>
+<a data-section-id="results" href="#results">Results</a>
+</nav>
+<!-- Scroll to Top Button -->
+<button aria-label="Scroll to top" class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top">
+<i class="fas fa-chevron-up"></i>
+</button>
+<main id="main-content">
+<section class="hero">
+<div class="hero-body">
+<div class="container is-max-desktop">
+<div class="columns is-centered">
+<div class="column has-text-centered">
+<!-- TODO: Replace with your paper title -->
+<h1 class="title is-1 publication-title publication-title-two-lines publication-title-standard">
+<span><span class="publication-title-proxidex">ProxiDex</span>: Learning Dynamics-Guided</span>
+<span>Proximity Policy for Dexterous Manipulation</span>
+</h1>
+<p class="conference-line">CoRL 2026, Austin Texas, USA</p>
+<div class="is-size-5 publication-authors paper-author-list">
+<span class="paper-author-row">
+<span class="paper-author">Yushan Bai<sup>1,2,3,*</sup></span>
+<span class="paper-author">Boyu Zheng<sup>1,2,3,*</sup></span>
+<span class="paper-author">Zhiyang Mao<sup>4</sup></span>
+<span class="paper-author">Hongzheng Sun<sup>1,2,3</sup></span>
+</span>
+<span class="paper-author-row">
+<span class="paper-author">Yuchuang Tong<sup>1,2,3,&dagger;</sup></span>
+<span class="paper-author">En Li<sup>1,2,3,5</sup></span>
+<span class="paper-author">Zhengtao Zhang<sup>1,2,3,5,&dagger;</sup></span>
+</span>
+<span class="paper-affiliations">
+<span class="paper-affiliation-row"><sup>1</sup>Institute of Automation, Chinese Academy of Sciences</span>
+<span class="paper-affiliation-row"><sup>2</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences</span>
+<span class="paper-affiliation-row"><sup>3</sup>CAS Engineering Laboratory for Intelligent Industrial Vision &nbsp;&nbsp; <sup>4</sup>Xinjiang University</span>
+<span class="paper-affiliation-row"><sup>5</sup>Beijing Zhongke Huiling Robot Technology Co., Ltd</span>
+<span class="paper-author-note"><sup>*</sup>Equal contribution. &nbsp;&nbsp; <sup>&dagger;</sup>Corresponding authors.</span>
+</span>
+</div>
+<div class="column has-text-centered">
+<div class="publication-links">
+<!-- TODO: Replace with your GitHub repository URL -->
+<span class="link-block">
+<a class="external-link button is-normal is-rounded is-dark" href="https://proxidex.github.io/" target="_blank">
+<span class="icon">
+<i class="fab fa-github"></i>
+</span>
+<span>Code: Coming Soon</span>
+</a>
+</span>
+<!-- TODO: Update with your arXiv paper ID -->
+<span class="link-block">
+<a class="external-link button is-normal is-rounded is-dark" href="https://proxidex.github.io/" target="_blank">
+<span class="icon">
+<i class="ai ai-arxiv"></i>
+</span>
+<span>Paper</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Teaser video-->
+<section class="hero teaser">
+<div class="container is-max-desktop">
+<div class="hero-body">
+<!-- TODO: Replace with your teaser video -->
+<video controls="" class="section-scroll-autoplay-video teaser-scroll-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" height="100%" id="tree" loop="" muted="" playsinline="" preload="metadata">
+<!-- TODO: Add your video file path here -->
+<source data-src="static/video3/CoRL2.mp4" type="video/mp4"/>
+</video>
+<!-- TODO: Replace with your video description -->
+<h2 class="subtitle has-text-centered">
+        We propose ProxiDex, a framework that integrates teleoperation with proximity-policy learning. The left panel shows immersive teleoperation with proximity feedback, while the right panel demonstrates robust performance in both simulation and real-world dexterous manipulation. 
+      </h2>
+</div>
+</div>
+</section>
+<!-- End teaser video -->
+<!-- Paper abstract -->
+<section class="section hero is-light">
+<div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h2 class="title is-3 abstract-compact-title">Abstract</h2>
+<div class="content has-text-justified abstract-compact">
+<!-- TODO: Replace with your paper abstract -->
+<p>
+            Multi-finger dexterous manipulation relies on stable hand-object interactions, yet these interactions are partially observable in practice. Visual observations are often occluded by the hand, tactile sensors introduce hardware-specific modalities and calibration burdens, and existing policies rarely model how these cues evolve under actions, making them brittle under contact uncertainty. To address these, we present ProxiDex, a dynamics-guided proximity policy framework that treats hand-object proximity as an interaction state for dexterous manipulation. ProxiDex reconstructs interaction point clouds and converts geometric distances into proximity cues, forming a hardware-agnostic contact representation that provides immersive feedback during VR teleoperation. Built on this representation, ProxiDex learns action-conditioned proximity dynamics with a coupled forward–inverse design: future observation latents are predicted from actions, while proximity variations are decoded from latent changes. Leveraging these dynamics, ProxiDex adaptively reweights proximity tokens across manipulation phases and uses dynamics-consistency supervision to guide policy inference, stabilizing action generation under unreliable visual feedback. Simulation and real-world experiments demonstrate improved success rates and robustness over representative baselines across standard, unseen objects, and perturbation scenarios.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End paper abstract -->
+<!-- Pipeline illustration carousel -->
+<section class="section pipeline-section" id="pipeline-illustration">
+<div class="container is-max-desktop">
+<h2 class="title is-3 has-text-centered">1. Framework</h2>
+<div aria-label="ProxiDex pipeline illustrations" aria-roledescription="carousel" class="pipeline-carousel">
+<div aria-label="Pipeline stages" class="pipeline-tabs" role="tablist">
+<button aria-selected="true" class="pipeline-tab is-active" data-pipeline-index="0" role="tab" type="button">
+          Teleoperation
+        </button>
+<button aria-selected="false" class="pipeline-tab" data-pipeline-index="1" role="tab" type="button">
+          Training of ProxiDex
+        </button>
+<button aria-selected="false" class="pipeline-tab" data-pipeline-index="2" role="tab" type="button">
+          Inference of ProxiDex
+        </button>
+</div>
+<div class="pipeline-viewport">
+<div class="pipeline-track" id="pipeline-track">
+<article aria-hidden="false" class="pipeline-slide">
+<div class="pipeline-image-frame">
+<img alt="VR teleoperation pipeline in ProxiDex" loading="eager" src="static/images/fig6.png"/>
+</div>
+<h3 class="title is-4 pipeline-slide-title">Teleoperation</h3>
+<p class="pipeline-description">
+              VR teleoperation pipeline in ProxiDex, where OpenXR hand keypoints and wrist poses are streamed to a workstation for hand–arm control, and the reconstructed hand–object interaction point cloud is sent back to the headset as optional proximity feedback for immersive teleoperation.
+            </p>
+</article>
+<article aria-hidden="true" class="pipeline-slide">
+<div class="pipeline-image-frame">
+<img alt="Training pipeline of ProxiDex" loading="lazy" src="static/images/fig2.png"/>
+</div>
+<h3 class="title is-4 pipeline-slide-title">Training of ProxiDex</h3>
+<p class="pipeline-description">
+              The training pipeline of ProxiDex proceeds in three stages: (a) interaction-aware data acquisition, which reconstructs hand–object interaction point clouds from manipulation images and robot states; (b) latent interaction dynamics modeling, which extracts region-level proximity cues and learns action-conditioned proximity evolution; and (c) trajectory-adaptive policy inference, which incorporates these cues into a diffusion policy to reweight proximity tokens across manipulation phases.
+            </p>
+</article>
+<article aria-hidden="true" class="pipeline-slide">
+<div class="pipeline-image-frame">
+<img alt="Policy inference pipeline with dynamics consistency guidance" loading="lazy" src="static/images/fig3.png"/>
+</div>
+<h3 class="title is-4 pipeline-slide-title">Inference of ProxiDex</h3>
+<p class="pipeline-description">
+              Dynamics-Guided Closed-Loop Inference is a real-time robust control mechanism that checks consistency between predicted and observed system dynamics. It encodes sensory input into latent states and uses a forward dynamics model to predict the next state given an action. If prediction matches observation within a threshold, the system updates using real data; otherwise, it switches to “Dynamics-Dream Mode”, generating future states autoregressively from the model to maintain stable, physically plausible control—especially under occlusion or sensing failure.
+            </p>
+</article>
+</div>
+</div>
+<button aria-label="Show previous pipeline illustration" class="pipeline-arrow is-previous" type="button">
+<i aria-hidden="true" class="fas fa-chevron-left"></i>
+</button>
+<button aria-label="Show next pipeline illustration" class="pipeline-arrow is-next" type="button">
+<i aria-hidden="true" class="fas fa-chevron-right"></i>
+</button>
+<div aria-label="Choose pipeline illustration" class="pipeline-dots">
+<button aria-current="true" aria-label="Show Teleoperation illustration" class="pipeline-dot is-active" data-pipeline-index="0" type="button"></button>
+<button aria-current="false" aria-label="Show Training of ProxiDex illustration" class="pipeline-dot" data-pipeline-index="1" type="button"></button>
+<button aria-current="false" aria-label="Show Inference of ProxiDex illustration" class="pipeline-dot" data-pipeline-index="2" type="button"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- End pipeline illustration carousel -->
+<!-- Teleoperation videos -->
+<section class="section teleoperation-group-section" id="teleoperation">
+<div class="container is-widescreen">
+<h2 class="title is-2 has-text-centered teleoperation-group-title">2. Teleoperation</h2>
+<!-- Simulator teleoperation -->
+<div class="teleoperation-subsection" id="simulator-teleoperation">
+<h3 class="title is-3 has-text-centered teleoperation-subtitle">Teleoperation in the simulator</h3>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Teleoperation in the simulator" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Simtask1-3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<!-- End simulator teleoperation -->
+<!-- Real-world teleoperation -->
+<div class="teleoperation-subsection" id="realworld-teleoperation">
+<h3 class="title is-3 has-text-centered teleoperation-subtitle">Teleoperation in the real-world</h3>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Teleoperation in the real world" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Realtask1-3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<!-- End real-world teleoperation -->
+</div>
+</section>
+<!-- End teleoperation videos -->
+<!-- Interaction point cloud visualization -->
+<section class="section interaction-pointcloud-section" id="interaction-pointcloud-visualization">
+<div class="container is-widescreen">
+<h2 class="title is-2 has-text-centered interaction-pointcloud-title">
+      3. Interaction Point Cloud Visualization
+    </h2>
+<!-- Adroit -->
+<div class="benchmark-visualization-group" id="adroit-visualization">
+<h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Benchmark: Adroit</h3>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Benchmark Adroit interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark1.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<!-- End Adroit -->
+<!-- DexArt -->
+<div class="benchmark-visualization-group" id="dexart-visualization">
+<h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Benchmark: DexArt</h3>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Benchmark DexArt interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<!-- End DexArt -->
+<!-- Self-Design -->
+<div class="benchmark-visualization-group" id="self-design-visualization">
+<h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Self-Design Tasks in IsaacLab</h3>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Self-designed IsaacLab interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark3.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<!-- End Self-Design -->
+<!-- Real-World -->
+<div class="benchmark-visualization-group" id="real-world-visualization">
+<h3 class="title is-3 has-text-centered benchmark-visualization-subtitle">Real-World</h3>
+<div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Real-world interaction point cloud visualization" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Benchmark4.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div>
+<!-- End Real-World -->
+</div>
+</section>
+<!-- End interaction point cloud visualization -->
+<!-- Quantitative results -->
+<section class="section results-section" id="results">
+<div class="container is-widescreen">
+<h2 class="title is-2 has-text-centered results-main-title">4. Results</h2>
+<div class="simulation-results-block" id="simulation-results">
+<h3 class="title is-3 has-text-centered simulation-results-title">Results in Simulation</h3>
+<div aria-label="Simulation benchmark results" class="results-table-wrapper" role="region" tabindex="0">
+<table class="simulation-results-table">
+<caption>
+            Simulation results on dexterous manipulation benchmarks. We evaluate all methods on Adroit, DexArt, and three self-designed IsaacLab tasks.
+          </caption>
+<thead>
+<tr>
+<th class="algorithm-column" rowspan="2" scope="col">Algorithm\Tasks</th>
+<th class="group-end" colspan="3" scope="colgroup">Adroit</th>
+<th class="group-end" colspan="4" scope="colgroup">DexArt</th>
+<th class="group-end" colspan="3" scope="colgroup">Self-Designed</th>
+<th rowspan="2" scope="col">Avg.</th>
+</tr>
+<tr>
+<th scope="col">Hammer</th>
+<th scope="col">Door</th>
+<th class="group-end" scope="col">Pen</th>
+<th scope="col">Laptop</th>
+<th scope="col">Faucet</th>
+<th scope="col">Toilet</th>
+<th class="group-end" scope="col">Bucket</th>
+<th scope="col">Box</th>
+<th scope="col">Driller</th>
+<th class="group-end" scope="col">Banana</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="algorithm-column">DP3</td>
+<td class="best-result">100.0±0.0</td>
+<td>76.7±4.7</td>
+<td class="group-end">56.7±2.6</td>
+<td>89.7±0.9</td>
+<td>41.7±0.5</td>
+<td>79.7±0.9</td>
+<td class="group-end">31.3±0.5</td>
+<td>90.3±3.2</td>
+<td>74.3±2.6</td>
+<td class="group-end">77.8±1.2</td>
+<td>71.8±1.7</td>
+</tr>
+<tr>
+<td class="algorithm-column">ManiFlow</td>
+<td class="best-result">100.0±0.0</td>
+<td>80.3±1.2</td>
+<td class="group-end">55.5±5.8</td>
+<td class="best-result">93.0±1.6</td>
+<td>45.0±3.6</td>
+<td>79.9±3.3</td>
+<td class="group-end">35.3±2.1</td>
+<td>94.7±2.1</td>
+<td>78.6±1.4</td>
+<td class="group-end">79.8±2.3</td>
+<td>74.2±2.3</td>
+</tr>
+<tr>
+<td class="algorithm-column">AFRO</td>
+<td>96.0±2.8</td>
+<td>83.8±3.4</td>
+<td class="group-end">72.3±2.1</td>
+<td>86.3±2.5</td>
+<td>42.3±1.8</td>
+<td>82.2±3.4</td>
+<td class="group-end">48.0±2.3</td>
+<td class="best-result">97.2±1.3</td>
+<td>79.4±1.5</td>
+<td class="group-end">81.4±1.8</td>
+<td>76.9±2.3</td>
+</tr>
+<tr>
+<td class="algorithm-column">CordViP</td>
+<td>96.0±2.1</td>
+<td>84.7±1.7</td>
+<td class="group-end">76.2±3.2</td>
+<td>92.6±2.1</td>
+<td class="best-result">56.5±1.3</td>
+<td>81.0±2.2</td>
+<td class="group-end">57.0±1.6</td>
+<td>96.3±2.0</td>
+<td>85.3±1.1</td>
+<td class="group-end">84.7±1.6</td>
+<td>81.0±1.9</td>
+</tr>
+<tr class="ours-row">
+<td class="algorithm-column ours-name">ProxiDex (Ours)</td>
+<td class="best-result">100.0±0.0</td>
+<td class="best-result">86.5±1.9</td>
+<td class="best-result group-end">84.3±2.4</td>
+<td class="best-result">93.0±1.2</td>
+<td>53.4±2.1</td>
+<td class="best-result">84.3±2.3</td>
+<td class="best-result group-end">64.0±3.2</td>
+<td>96.7±1.6</td>
+<td class="best-result">89.2±2.0</td>
+<td class="best-result group-end">87.3±1.5</td>
+<td class="best-result">83.9±1.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p aria-hidden="true" class="results-scroll-hint">Swipe horizontally to view the complete table.</p>
+</div>
+<div class="comparison-results-block" id="generalization-unseen-objects">
+<h3 class="title is-3 has-text-centered comparison-results-title">Generalization to Unseen Objects</h3>
+<div class="labeled-result-video-layout"><div aria-hidden="true" class="result-axis-corner"></div><div aria-label="Compared methods" class="result-column-labels"><div class="result-column-label">DP3</div><div class="result-column-label">ManiFlow</div><div class="result-column-label">AFRO</div><div class="result-column-label">CordViP</div><div class="result-column-label">ProxiDex</div></div><div aria-label="Manipulation tasks" class="result-row-labels"><div class="result-row-label">Pick</div><div class="result-row-label">Pinch</div><div class="result-row-label">Sweep</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Generalization to unseen objects" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Unseen2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
+<div class="comparison-results-block" id="robust-clutter-scenarios">
+<h3 class="title is-3 has-text-centered comparison-results-title">Robust to Clutter Scenarios</h3>
+<div class="labeled-result-video-layout"><div aria-hidden="true" class="result-axis-corner"></div><div aria-label="Compared methods" class="result-column-labels"><div class="result-column-label">DP3</div><div class="result-column-label">ManiFlow</div><div class="result-column-label">AFRO</div><div class="result-column-label">CordViP</div><div class="result-column-label">ProxiDex</div></div><div aria-label="Manipulation tasks" class="result-row-labels"><div class="result-row-label">Pick</div><div class="result-row-label">Pinch</div><div class="result-row-label">Sweep</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Robustness to clutter scenarios" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/Clutter2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
+<div class="comparison-results-block" id="robust-visual-occlusion">
+<h3 class="title is-3 has-text-centered comparison-results-title">Robust to Visual Occlusion</h3>
+<div class="labeled-result-video-layout"><div aria-hidden="true" class="result-axis-corner"></div><div aria-label="Compared methods" class="result-column-labels"><div class="result-column-label">DP3</div><div class="result-column-label">ManiFlow</div><div class="result-column-label">AFRO</div><div class="result-column-label">CordViP</div><div class="result-column-label">ProxiDex</div></div><div aria-label="Manipulation tasks" class="result-row-labels"><div class="result-row-label">Pick</div><div class="result-row-label">Pinch</div><div class="result-row-label">Sweep</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Robustness to visual occlusion" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/occlusion2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
+<div class="comparison-results-block" id="contact-rich-tasks">
+<h3 class="title is-3 has-text-centered comparison-results-title">Performance on Contact-Rich Tasks</h3>
+<div class="labeled-result-video-layout" style="--result-row-count: 2;"><div aria-hidden="true" class="result-axis-corner"></div><div aria-label="Compared methods" class="result-column-labels"><div class="result-column-label">DP3</div><div class="result-column-label">ManiFlow</div><div class="result-column-label">AFRO</div><div class="result-column-label">CordViP</div><div class="result-column-label">ProxiDex</div></div><div aria-label="Contact-rich manipulation tasks" class="result-row-labels"><div class="result-row-label">Twist Cap</div><div class="result-row-label">Flip Cap</div></div><div class="natural-video-showcase"><div class="natural-video-frame"><video controls="" aria-label="Performance on contact-rich tasks" class="section-scroll-autoplay-video" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" loop="" muted="" playsinline="" preload="metadata"><source data-src="static/video3/contact2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div></div></div>
+</div>
+</section>
+<!-- End quantitative results -->
+<!-- Statcounter tracking code -->
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+<!-- End of Statcounter Code -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.pipeline-carousel');
+    const track = document.getElementById('pipeline-track');
+
+    if (!carousel || !track) {
+      return;
+    }
+
+    const slides = Array.from(track.querySelectorAll('.pipeline-slide'));
+    const tabs = Array.from(carousel.querySelectorAll('.pipeline-tab'));
+    const dots = Array.from(carousel.querySelectorAll('.pipeline-dot'));
+    const previousButton = carousel.querySelector('.pipeline-arrow.is-previous');
+    const nextButton = carousel.querySelector('.pipeline-arrow.is-next');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const hoverPauseTargets = Array.from(
+      carousel.querySelectorAll(
+        '.pipeline-tab, .pipeline-image-frame, .pipeline-slide-title, ' +
+        '.pipeline-description, .pipeline-arrow, .pipeline-dot'
+      )
+    );
+
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    let hoveredPauseTargets = 0;
+    let focusPaused = false;
+    const autoplayDelay = 5000;
+
+    function isInteractionPaused() {
+      return hoveredPauseTargets > 0 || focusPaused;
+    }
+
+    function showSlide(index, restartAutoplay) {
+      currentIndex = (index + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+
+      slides.forEach(function (slide, slideIndex) {
+        slide.setAttribute('aria-hidden', String(slideIndex !== currentIndex));
+      });
+
+      tabs.forEach(function (tab, tabIndex) {
+        const isActive = tabIndex === currentIndex;
+        tab.classList.toggle('is-active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+      });
+
+      dots.forEach(function (dot, dotIndex) {
+        const isActive = dotIndex === currentIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-current', String(isActive));
+      });
+
+      if (restartAutoplay) {
+        startAutoplay();
+      }
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer !== null) {
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+
+      if (
+        reducedMotionQuery.matches ||
+        document.hidden ||
+        isInteractionPaused()
+      ) {
+        return;
+      }
+
+      autoplayTimer = window.setInterval(function () {
+        showSlide(currentIndex + 1, false);
+      }, autoplayDelay);
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        showSlide(Number(tab.dataset.pipelineIndex), true);
+      });
+    });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        showSlide(Number(dot.dataset.pipelineIndex), true);
+      });
+    });
+
+    if (previousButton) {
+      previousButton.addEventListener('click', function () {
+        showSlide(currentIndex - 1, true);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', function () {
+        showSlide(currentIndex + 1, true);
+      });
+    }
+
+    /*
+      Auto-rotation continues while the pointer is outside the carousel's
+      meaningful content. It pauses over tabs, images, titles, descriptions,
+      arrows, and dots, so the selected panel never moves while being read.
+    */
+    hoverPauseTargets.forEach(function (target) {
+      target.addEventListener('pointerenter', function () {
+        hoveredPauseTargets += 1;
+        stopAutoplay();
+      });
+
+      target.addEventListener('pointerleave', function () {
+        hoveredPauseTargets = Math.max(0, hoveredPauseTargets - 1);
+        startAutoplay();
+      });
+    });
+
+    carousel.addEventListener('focusin', function () {
+      focusPaused = true;
+      stopAutoplay();
+    });
+
+    carousel.addEventListener('focusout', function (event) {
+      if (!carousel.contains(event.relatedTarget)) {
+        focusPaused = false;
+        startAutoplay();
+      }
+    });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    if (typeof reducedMotionQuery.addEventListener === 'function') {
+      reducedMotionQuery.addEventListener('change', startAutoplay);
+    }
+
+    showSlide(0, false);
+    startAutoplay();
+  });
+</script>
+</main><script>
+document.addEventListener('DOMContentLoaded', function () {
+  const navigation = document.querySelector('.section-side-nav');
+  if (!navigation) {
+    return;
+  }
+
+  const links = Array.from(navigation.querySelectorAll('a[data-section-id]'));
+  const sections = links
+    .map(function (link) {
+      const section = document.getElementById(link.dataset.sectionId);
+      return section ? { link: link, section: section } : null;
+    })
+    .filter(Boolean);
+  let updateFrame = null;
+
+  function setActiveLink(activeLink) {
+    links.forEach(function (link) {
+      const isActive = link === activeLink;
+      link.classList.toggle('is-active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  function updateNavigation() {
+    updateFrame = null;
+    const marker = window.innerHeight * 0.36;
+    let activeItem = null;
+
+    sections.forEach(function (item) {
+      const rect = item.section.getBoundingClientRect();
+      if (rect.top <= marker && rect.bottom > marker) {
+        activeItem = item;
+      }
+    });
+
+    if (!activeItem) {
+      const passedSections = sections.filter(function (item) {
+        return item.section.getBoundingClientRect().top <= marker;
+      });
+      activeItem = passedSections[passedSections.length - 1] || null;
+    }
+
+    setActiveLink(activeItem ? activeItem.link : null);
+  }
+
+  function scheduleNavigationUpdate() {
+    if (updateFrame === null) {
+      updateFrame = window.requestAnimationFrame(updateNavigation);
+    }
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const target = document.getElementById(link.dataset.sectionId);
+      if (!target) {
+        return;
+      }
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
+      try {
+        window.history.replaceState(null, '', '#' + link.dataset.sectionId);
+      } catch (error) {
+        /* Scrolling still works when a local preview blocks history updates. */
+      }
+      setActiveLink(link);
+    });
+  });
+
+  window.addEventListener('scroll', scheduleNavigationUpdate, { passive: true });
+  window.addEventListener('resize', scheduleNavigationUpdate, { passive: true });
+  updateNavigation();
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function () {
+  const videos = Array.from(
+    document.querySelectorAll('.section-scroll-autoplay-video')
+  );
+
+  if (!videos.length) {
+    return;
+  }
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const videoStates = new WeakMap();
+  let animationFrameId = null;
+  let activeVideo = null;
+
+  function getOrCreateFrame(video) {
+    let frame = video.closest(
+      '.natural-video-frame, .single-video-frame, .task-video-frame, .comparison-video-frame'
+    );
+
+    if (!frame) {
+      frame = document.createElement('div');
+      frame.className = 'video-managed-frame teaser-video-managed-frame';
+      video.parentNode.insertBefore(frame, video);
+      frame.appendChild(video);
+    } else {
+      frame.classList.add('video-managed-frame');
+    }
+
+    return frame;
+  }
+
+  function createLoadingUI(video) {
+    const frame = getOrCreateFrame(video);
+    frame.classList.add('is-loading');
+
+    const overlay = document.createElement('div');
+    overlay.className = 'video-loading-overlay';
+    overlay.setAttribute('aria-live', 'polite');
+
+    const card = document.createElement('div');
+    card.className = 'video-loading-card';
+
+    const spinner = document.createElement('div');
+    spinner.className = 'video-loading-spinner';
+    spinner.setAttribute('aria-hidden', 'true');
+
+    const label = document.createElement('p');
+    label.className = 'video-loading-label';
+    label.textContent = 'Loading video…';
+
+    const progressTrack = document.createElement('div');
+    progressTrack.className = 'video-buffer-track';
+    progressTrack.setAttribute('aria-hidden', 'true');
+
+    const progressValue = document.createElement('div');
+    progressValue.className = 'video-buffer-value';
+    progressTrack.appendChild(progressValue);
+
+    const retryButton = document.createElement('button');
+    retryButton.className = 'video-retry-button';
+    retryButton.type = 'button';
+    retryButton.textContent = 'Retry video';
+
+    card.appendChild(spinner);
+    card.appendChild(label);
+    card.appendChild(progressTrack);
+    card.appendChild(retryButton);
+    overlay.appendChild(card);
+    frame.appendChild(overlay);
+
+    const state = {
+      frame: frame,
+      label: label,
+      progressValue: progressValue,
+      retryButton: retryButton,
+      autoPauseRequested: false
+    };
+
+    videoStates.set(video, state);
+
+    retryButton.addEventListener('click', function () {
+      retryVideo(video);
+    });
+  }
+
+  function setLoading(video, message) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    state.frame.classList.add('is-loading');
+    state.frame.classList.remove('is-ready', 'is-error');
+    state.label.textContent = message || 'Loading video…';
+  }
+
+  function setReady(video) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    state.frame.classList.remove('is-loading', 'is-error');
+    state.frame.classList.add('is-ready');
+  }
+
+  function setError(video) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    state.frame.classList.remove('is-loading', 'is-ready');
+    state.frame.classList.add('is-error');
+    state.label.textContent = 'The video could not be loaded.';
+  }
+
+  function updateBufferedProgress(video) {
+    const state = videoStates.get(video);
+    if (!state) {
+      return;
+    }
+
+    let percent = 0;
+
+    if (
+      Number.isFinite(video.duration) &&
+      video.duration > 0 &&
+      video.buffered.length > 0
+    ) {
+      let bufferedEnd = 0;
+      for (let index = 0; index < video.buffered.length; index += 1) {
+        bufferedEnd = Math.max(bufferedEnd, video.buffered.end(index));
+      }
+      percent = Math.max(0, Math.min(100, (bufferedEnd / video.duration) * 100));
+    }
+
+    state.progressValue.style.width = percent.toFixed(1) + '%';
+
+    if (percent >= 1 && state.frame.classList.contains('is-loading')) {
+      state.label.textContent = 'Loading video… ' + Math.round(percent) + '%';
+    }
+  }
+
+  function loadVideo(video, preloadMode) {
+    if (!video) {
+      return;
+    }
+
+    if (preloadMode === 'auto') {
+      video.preload = 'auto';
+    } else if (video.preload !== 'auto') {
+      video.preload = 'metadata';
+    }
+
+    if (video.dataset.loaded === 'true') {
+      return;
+    }
+
+    const source = video.querySelector('source[data-src]');
+    if (!source) {
+      return;
+    }
+
+    const sourceUrl = source.dataset.src;
+    video.dataset.sourceUrl = sourceUrl;
+    source.src = sourceUrl;
+    source.removeAttribute('data-src');
+    video.dataset.loaded = 'true';
+    setLoading(video, 'Loading video…');
+    video.load();
+  }
+
+  function retryVideo(video) {
+    const source = video.querySelector('source');
+    const sourceUrl = video.dataset.sourceUrl || (source && source.dataset.src);
+
+    if (!source || !sourceUrl) {
+      setError(video);
+      return;
+    }
+
+    setLoading(video, 'Retrying video…');
+    source.removeAttribute('src');
+    video.removeAttribute('src');
+    video.load();
+
+    window.setTimeout(function () {
+      source.src = sourceUrl;
+      video.dataset.loaded = 'true';
+      video.preload = 'auto';
+      video.load();
+
+      if (video === activeVideo && video.dataset.userPaused !== 'true') {
+        safelyPlay(video);
+      }
+    }, 80);
+  }
+
+  function applyNaturalAspectRatio(video) {
+    if (!video.videoWidth || !video.videoHeight) {
+      return;
+    }
+
+    const frame = video.closest(
+      '.natural-video-frame, .single-video-frame, .task-video-frame, .comparison-video-frame, .video-managed-frame'
+    );
+
+    if (frame) {
+      frame.style.aspectRatio = video.videoWidth + ' / ' + video.videoHeight;
+      frame.classList.add('has-video-metadata');
+    }
+  }
+
+  function isMeaningfullyVisible(video) {
+    const rect = video.getBoundingClientRect();
+    const viewportHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+
+    const visibleTop = Math.max(rect.top, 0);
+    const visibleBottom = Math.min(rect.bottom, viewportHeight);
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    const referenceHeight = Math.max(1, Math.min(rect.height, viewportHeight));
+
+    return visibleHeight / referenceHeight >= 0.18;
+  }
+
+  function distanceToViewportCenter(video) {
+    const rect = video.getBoundingClientRect();
+    const videoCenter = rect.top + rect.height / 2;
+    const viewportCenter =
+      (window.innerHeight || document.documentElement.clientHeight) / 2;
+
+    return Math.abs(videoCenter - viewportCenter);
+  }
+
+  function pauseAutomatically(video) {
+    const state = videoStates.get(video);
+    if (!state || video.paused) {
+      return;
+    }
+
+    state.autoPauseRequested = true;
+    video.pause();
+  }
+
+  function safelyPlay(video) {
+    if (
+      !video ||
+      reducedMotion.matches ||
+      document.hidden ||
+      video.dataset.userPaused === 'true'
+    ) {
+      return;
+    }
+
+    loadVideo(video, 'auto');
+
+    if (video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+      setLoading(video, 'Loading video…');
+    }
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(function () {
+        /* Native controls remain available if autoplay is blocked. */
+        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          setReady(video);
+        }
+      });
+    }
+  }
+
+  function updateActiveVideo() {
+    animationFrameId = null;
+
+    if (document.hidden || reducedMotion.matches) {
+      videos.forEach(pauseAutomatically);
+      return;
+    }
+
+    const visibleVideos = videos.filter(isMeaningfullyVisible);
+
+    if (!visibleVideos.length) {
+      activeVideo = null;
+      videos.forEach(pauseAutomatically);
+      return;
+    }
+
+    visibleVideos.sort(function (a, b) {
+      return distanceToViewportCenter(a) - distanceToViewportCenter(b);
+    });
+
+    activeVideo = visibleVideos[0];
+    loadVideo(activeVideo, 'auto');
+
+    videos.forEach(function (video) {
+      if (video !== activeVideo) {
+        pauseAutomatically(video);
+      }
+    });
+
+    if (activeVideo.dataset.userPaused !== 'true') {
+      safelyPlay(activeVideo);
+    }
+  }
+
+  function scheduleUpdate() {
+    if (animationFrameId !== null) {
+      return;
+    }
+
+    animationFrameId = window.requestAnimationFrame(updateActiveVideo);
+  }
+
+  videos.forEach(function (video) {
+    createLoadingUI(video);
+    video.controls = true;
+    video.preload = 'metadata';
+    video.dataset.userPaused = 'false';
+
+    video.addEventListener('loadstart', function () {
+      setLoading(video, 'Loading video…');
+    });
+
+    video.addEventListener('progress', function () {
+      updateBufferedProgress(video);
+    });
+
+    video.addEventListener('loadedmetadata', function () {
+      applyNaturalAspectRatio(video);
+      updateBufferedProgress(video);
+      scheduleUpdate();
+    });
+
+    video.addEventListener('loadeddata', function () {
+      setReady(video);
+    });
+
+    video.addEventListener('canplay', function () {
+      setReady(video);
+    });
+
+    video.addEventListener('playing', function () {
+      setReady(video);
+    });
+
+    video.addEventListener('waiting', function () {
+      if (video === activeVideo) {
+        setLoading(video, 'Buffering video…');
+      }
+    });
+
+    video.addEventListener('stalled', function () {
+      if (video === activeVideo) {
+        setLoading(video, 'Buffering video…');
+      }
+    });
+
+    video.addEventListener('seeking', function () {
+      setLoading(video, 'Seeking…');
+    });
+
+    video.addEventListener('seeked', function () {
+      if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+        setReady(video);
+      }
+    });
+
+    video.addEventListener('error', function () {
+      setError(video);
+    });
+
+    video.addEventListener('play', function () {
+      video.dataset.userPaused = 'false';
+      activeVideo = video;
+
+      videos.forEach(function (otherVideo) {
+        if (otherVideo !== video) {
+          pauseAutomatically(otherVideo);
+        }
+      });
+    });
+
+    video.addEventListener('pause', function () {
+      const state = videoStates.get(video);
+      if (state && state.autoPauseRequested) {
+        state.autoPauseRequested = false;
+        return;
+      }
+
+      if (!video.ended) {
+        video.dataset.userPaused = 'true';
+      }
+    });
+  });
+
+  /* Preload videos before they enter the viewport to avoid black frames. */
+  if ('IntersectionObserver' in window) {
+    const preloadObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target, 'metadata');
+            preloadObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '1200px 0px',
+        threshold: 0.01
+      }
+    );
+
+    videos.forEach(function (video) {
+      preloadObserver.observe(video);
+    });
+  } else {
+    videos.slice(0, 2).forEach(function (video) {
+      loadVideo(video, 'metadata');
+    });
+  }
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      videos.forEach(pauseAutomatically);
+    } else {
+      scheduleUpdate();
+    }
+  });
+
+  if (typeof reducedMotion.addEventListener === 'function') {
+    reducedMotion.addEventListener('change', scheduleUpdate);
+  }
+
+  scheduleUpdate();
+});
+</script></body>
+</html>
